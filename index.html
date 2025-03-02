@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychiatry Consultancy App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: linear-gradient(to bottom, #f7f7f7, #fff);
+        }
+        .nav-item {
+            margin-right: 20px;
+        }
+        .nav-link {
+            color: #337ab7;
+        }
+        .nav-link:hover {
+            color: #23527c;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+        .card {
+            margin: 20px;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 18px;
+            color: #666;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #337ab7;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #23527c;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            max-width: 90%;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .modal-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .modal-body {
+            padding: 20px;
+        }
+        .modal-footer {
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Psychiatry Consultancy App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#login">Login/Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#book">Book an Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#query">Ask a Query</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="card-title">Welcome to Psychiatry Consultancy App</h1>
+                    <p class="card-text">Our team of experienced psychiatrists is here to help you with any mental health concerns you may have. We offer a range of services, including individual therapy, couples therapy, and family therapy.</p>
+                    <button class="btn" id="book-appointment-btn">Book an Appointment</button>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/500x300" alt="Psychiatry Consultancy App">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <h1 class="card-title">About Us</h1>
+            <p class="card-text">Our team of psychiatrists is dedicated to providing high-quality mental health services to our patients. We have years of experience in the field and are committed to helping you achieve your mental health goals.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. John Doe</h5>
+                            <p class="card-text">Psychiatrist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Jane Smith</h5>
+                            <p class="card-text">Psychiatrist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Bob Johnson</h5>
+                            <p class="card-text">Psychiatrist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="login">
+        <div class="container">
+            <h1 class="card-title">Login/Register</h1>
+            <p class="card-text">Please login or register to access our services.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="book">
+        <div class="container">
+            <h1 class="card-title">Book an Appointment</h1>
+            <p class="card-text">Please select a date and time to book an appointment.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="doctor">Select a Doctor</label>
+                            <br>
+                            <br>
+                            <select id="doctor" name="doctor">
+                                <option value="">Select a Doctor</option>
+                                <!-- dynamically generated options for available doctors -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="date" placeholder="Date">
+                        </div>
+                        <div class="mb-3">
+                            <label for="time" class="form-label">Time</label>
+                            <input type="time" class="form-control" id="time" placeholder="Time">
+                        </div>
+                        <button type="submit" class="btn">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="query">
+        <div class="container">
+            <h1 class="card-title">Ask a Query</h1>
+            <p class="card-text">Please ask your query and we will get back to you.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="query" class="form-label">Query</label>
+                            <textarea class="form-control" id="query" placeholder="Query"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Ask Query</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal" id="book-appointment-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Book an Appointment</h5>
+                <button type="button" class="btn-close" id="close-modal-btn"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="date" placeholder="Date">
+                    </div>
+                    <div class="mb-3">
+                        <label for="time" class="form-label">Time</label>
+                        <input type="time" class="form-control" id="time" placeholder="Time">
+                    </div>
+                    <button type="submit" class="btn">Book Appointment</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" id="close-modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('book-appointment-btn').addEventListener('click', function() {
+            document.getElementById('book-appointment-modal').style.display = 'flex';
+        });
+        document.getElementById('close-modal-btn').addEventListener('click', function() {
+            document.getElementById('book-appointment-modal').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
