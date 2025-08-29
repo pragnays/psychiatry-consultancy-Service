@@ -1,213 +1,148 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindCare Psychiatry Consultancy</title>
-  <style>
-    /* Reset + Base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f9f9fb;
-    }
-    a { text-decoration: none; color: inherit; }
-
-    /* Navbar */
-    header {
-      background: #4a6fa5;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 { font-size: 1.5rem; }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li { font-weight: bold; }
-    nav ul li a:hover { color: #ffe082; }
-
-    /* Hero */
-    .hero {
-      height: 90vh;
-      background: linear-gradient(rgba(83, 106, 141, 0.8), rgba(104, 126, 158, 0.8)), url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 0 2rem;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      max-width: 600px;
-      margin-bottom: 2rem;
-    }
-    .hero button {
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 25px;
-      background: #ffe082;
-      color: #333;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .hero button:hover { background: #ffd54f; }
-
-    /* Sections */
-    section { padding: 4rem 2rem; text-align: center; }
-    section h2 { margin-bottom: 2rem; font-size: 2rem; color: #052b66; }
-
-    /* About */
-    .about p { max-width: 800px; margin: auto; font-size: 1.1rem; }
-
-    /* Services */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .service-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-    .service-card:hover { transform: translateY(-5px); }
-    .service-card h3 { margin-bottom: 1rem; color: #333; }
-
-    /* Booking Form */
-    form {
-      max-width: 500px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      background: white;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    form input, form textarea, form select {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    form button {
-      background: #4a6fa5;
-      color: white;
-      border: none;
-      padding: 1rem;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    form button:hover { background: #395580; }
-
-    /* Footer */
-    footer {
-      background: #4a6fa5;
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-  </style>
+  <title>MindCare - Psychiatry Consultancy</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header>
-    <h1>MindCare</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#booking">Book</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- 🌐 Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">MindCare</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#doctors">About Doctors</a></li>
+      <li><a href="#appointments">Appointments</a></li>
+      <li><a href="#peer-support">Peer Support</a></li>
+      <li><a href="#chat-doctor">Chat with Doctor</a></li>
+      <li><a href="#chatbot">Chatbot</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <h2>Your Mental Health Matters</h2>
-    <p>Professional psychiatric support and counseling to help you achieve peace of mind, balance, and emotional well-being.</p>
-    <button onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a Consultation</button>
+  <!-- 🏠 Hero Section -->
+  <section id="home" class="hero">
+    <h1>Your Mental Wellness Matters</h1>
+    <p>Confidential, Caring, and Compassionate Psychiatry Support</p>
+    <button class="cta-btn">Book Appointment</button>
   </section>
 
-  <!-- About -->
-  <section class="about" id="about">
-    <h2>About Us</h2>
-    <p>At MindCare, we provide compassionate psychiatric care and counseling tailored to your unique needs. 
-    Our mission is to create a safe and supportive environment where individuals can explore their thoughts, feelings, and experiences. 
-    We believe that mental health is an essential part of overall well-being.</p>
-  </section>
-
-  <!-- Services -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>Psychiatric Evaluation</h3>
-        <p>Comprehensive mental health assessments to understand your condition and needs.</p>
+  <!-- 👨‍⚕️ Doctors Section -->
+  <section id="doctors" class="section">
+    <h2>Meet Our Doctors</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Doctor">
+        <h3>Dr. Ananya Sharma</h3>
+        <p>Specialist in Anxiety & Depression</p>
+        <p class="timings">Mon–Fri: 10 AM – 5 PM</p>
+        <button class="btn">Book Appointment</button>
       </div>
-      <div class="service-card">
-        <h3>Therapy & Counseling</h3>
-        <p>Individual, couple, and group therapy sessions with licensed professionals.</p>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Doctor">
+        <h3>Dr. Rajesh Mehta</h3>
+        <p>Child & Adolescent Psychiatry</p>
+        <p class="timings">Mon–Sat: 11 AM – 4 PM</p>
+        <button class="btn">Book Appointment</button>
       </div>
-      <div class="service-card">
-        <h3>Medication Management</h3>
-        <p>Safe and effective medication guidance as part of a holistic treatment plan.</p>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Doctor">
+        <h3>Dr. Kavya Iyer</h3>
+        <p>Bipolar & Schizophrenia Specialist</p>
+        <p class="timings">Tue–Fri: 2 PM – 6 PM</p>
+        <button class="btn">Book Appointment</button>
       </div>
     </div>
   </section>
 
-  <!-- Booking Form -->
-  <section id="booking">
-    <h2>Book a Consultation</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <select required>
-        <option value="">Select Service</option>
-        <option>Psychiatric Evaluation</option>
-        <option>Therapy & Counseling</option>
-        <option>Medication Management</option>
+  <!-- 📅 Appointment Booking -->
+  <section id="appointments" class="section">
+    <h2>Book an Appointment</h2>
+    <form class="form">
+      <label>Select Doctor:</label>
+      <select>
+        <option>Dr. Ananya Sharma</option>
+        <option>Dr. Rajesh Mehta</option>
+        <option>Dr. Kavya Iyer</option>
       </select>
-      <textarea rows="4" placeholder="Additional Notes"></textarea>
-      <button type="submit">Submit Request</button>
+
+      <label>Select Date:</label>
+      <input type="date">
+
+      <label>Select Time:</label>
+      <select>
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+        <option>2:00 PM</option>
+        <option>4:00 PM</option>
+      </select>
+
+      <button type="submit" class="btn">Confirm Appointment</button>
     </form>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@mindcare.com | Phone: +91 xxxxxxxxxx</p>
-    <p>Address: 123 xyz Street, Bengaluru, India</p>
+  <!-- 🤝 Peer Support -->
+  <section id="peer-support" class="section">
+    <h2>Peer Support Chat</h2>
+    <div class="chat-box">
+      <div class="messages">
+        <div class="msg peer">Hi, I’ve been through anxiety too. You’re not alone ❤️</div>
+        <div class="msg user">Thank you, it means a lot to talk to someone who understands.</div>
+      </div>
+      <input type="text" placeholder="Type your message...">
+    </div>
   </section>
 
-  <!-- Footer -->
+  <!-- 💬 Chat with Doctor -->
+  <section id="chat-doctor" class="section">
+    <h2>Chat with Doctor</h2>
+    <div class="chat-box">
+      <div class="messages">
+        <div class="msg doctor">Hello, how are you feeling today?</div>
+        <div class="msg user">I’ve been feeling a bit stressed lately.</div>
+      </div>
+      <input type="text" placeholder="Type your message...">
+    </div>
+  </section>
+
+  <!-- 🤖 AI Chatbot -->
+  <div id="chatbot" class="chatbot">
+    <button class="chatbot-btn">💬</button>
+    <div class="chatbot-window">
+      <div class="messages">
+        <div class="msg bot">Hello! I’m your mental health assistant. How can I help you?</div>
+      </div>
+      <input type="text" placeholder="Ask me anything...">
+    </div>
+  </div>
+
+  <!-- 📞 Contact -->
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <form class="form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+    <div class="contact-info">
+      <p>📍 123 Wellness Street, Bangalore, India</p>
+      <p>📞 +91 98765 43210</p>
+      <p>✉️ support@mindcare.com</p>
+    </div>
+  </section>
+
+  <!-- 🌐 Footer -->
   <footer>
-    <p>MindCare Psychiatry Consultancy </p>
+    <p>© 2025 MindCare | All Rights Reserved</p>
+    <div class="socials">
+      <a href="#">🌐</a>
+      <a href="#">🐦</a>
+      <a href="#">📘</a>
+    </div>
   </footer>
 
 </body>
