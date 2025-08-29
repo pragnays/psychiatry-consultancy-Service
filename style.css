@@ -1,0 +1,172 @@
+/* Global Theme */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f8ff;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #3c3c80;
+}
+
+.section {
+  padding: 50px;
+  text-align: center;
+}
+
+/* Navbar */
+.navbar {
+  background: #6a9fb5;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(to right, #b5c7f2, #a0e1e0);
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.cta-btn {
+  background: #6a9fb5;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Cards */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 250px;
+  text-align: center;
+}
+
+.card img {
+  border-radius: 50%;
+}
+
+.btn {
+  background: #6a9fb5;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Forms */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.form input, .form select, .form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/* Chat */
+.chat-box {
+  background: white;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.messages {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.msg {
+  background: #e6f0ff;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.msg.user { background: #d4f5e9; float: right; clear: both; }
+.msg.peer { background: #fce4ec; clear: both; }
+.msg.doctor { background: #ede7f6; clear: both; }
+.msg.bot { background: #fff3e0; clear: both; }
+
+/* Chatbot */
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.chatbot-btn {
+  background: #6a9fb5;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.chatbot-window {
+  display: none;
+  background: white;
+  width: 300px;
+  height: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  padding: 15px;
+}
+
+/* Contact */
+.contact-info {
+  margin-top: 20px;
+}
+
+footer {
+  background: #6a9fb5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
